@@ -7,6 +7,7 @@ using Htsoft.Uttt.Edi.Infraestructura.Mongo;
 using Htsoft.Uttt.Edi.Infraestructura.Middleware;
 using Htsoft.Uttt.Edi.Aplication.Interfaces;
 using Htsoft.Uttt.Edi.Aplication.Interfaces.Repositories;
+using Microsoft.AspNetCore.Http.Features;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
@@ -23,6 +24,11 @@ try
      {
          fv.RegisterValidatorsFromAssemblyContaining<EdiModelValidator>();
      });
+
+    builder.Services.Configure<FormOptions>(options =>
+    {
+        options.MultipartBodyLengthLimit = long.MaxValue; // Permite archivos grandes
+    });
 
     builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDb"));
