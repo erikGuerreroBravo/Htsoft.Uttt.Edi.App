@@ -4,7 +4,7 @@ using NLog;
 using FluentValidation.AspNetCore;
 using Htsoft.Uttt.Edi.Aplication.Validators;
 using Htsoft.Uttt.Edi.Infraestructura.Mongo;
-
+using Htsoft.Uttt.Edi.Infraestructura.Middleware;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
@@ -36,6 +36,7 @@ try
         app.UseHsts();
     }
 
+    app.UseExceptionHandlingMiddleware();
     app.UseHttpsRedirection();
     app.UseRouting();
 
