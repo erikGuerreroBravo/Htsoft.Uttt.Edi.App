@@ -38,7 +38,7 @@ try
     builder.Configuration.GetSection("MongoDb"));
     builder.Services.AddSingleton<MongoDbContext>();
     builder.Services.AddScoped<IEdiRepository, EdiRepository>();
-    builder.Services.AddScoped<ExceptionHandlingMiddleware>();
+    ///builder.Services.AddScoped<ExceptionHandlingMiddleware>();
     builder.Services.AddScoped(typeof(ILoggingService<>), typeof(LoggingService<>));
     builder.Services.AddScoped<IExcelUploadService, ExcelUploadService>();
 

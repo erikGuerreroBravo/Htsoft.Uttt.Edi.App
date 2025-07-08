@@ -88,11 +88,11 @@ namespace Htsoft.Uttt.Edi.App.Controllers
                         try
                         {
                             await _repository!.InsertAsync(entity);
-                            Interlocked.Increment(ref registrosInsertados); // Thread-safe counter
+                            Interlocked.Increment(ref registrosInsertados); 
                         }
                         catch (Exception ex)
                         {
-                            // Aquí puedes loggear el error por entidad si quieres
+                            //hay que poner  en el log que pasa
                         }
                         finally
                         {
