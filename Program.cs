@@ -1,17 +1,15 @@
-using NLog;
-using NLog.Web;
-using NLog;
 using FluentValidation.AspNetCore;
-using Htsoft.Uttt.Edi.Aplication.Validators;
-using Htsoft.Uttt.Edi.Infraestructura.Mongo;
-using Htsoft.Uttt.Edi.Infraestructura.Middleware;
 using Htsoft.Uttt.Edi.Aplication.Interfaces;
-using Htsoft.Uttt.Edi.Infraestructura.Repositories;
-using Microsoft.AspNetCore.Http.Features;
 using Htsoft.Uttt.Edi.Aplication.Interfaces.Loging;
-using Htsoft.Uttt.Edi.Infraestructura.Services.Logging;
 using Htsoft.Uttt.Edi.Aplication.Interfaces.Services;
+using Htsoft.Uttt.Edi.Aplication.Validators;
+using Htsoft.Uttt.Edi.Infraestructura.Middleware;
+using Htsoft.Uttt.Edi.Infraestructura.Mongo;
+using Htsoft.Uttt.Edi.Infraestructura.Repositories;
 using Htsoft.Uttt.Edi.Infraestructura.Services;
+using Htsoft.Uttt.Edi.Infraestructura.Services.Logging;
+using Microsoft.AspNetCore.Http.Features;
+using NLog;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
