@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Htsoft.Uttt.Edi.Domain", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Htsoft.Uttt.Edi.Infraestructure", "Htsoft.Uttt.Edi.Infraestructure\Htsoft.Uttt.Edi.Infraestructure.csproj", "{EBBA23C5-2A6A-4EF1-A224-A1A62253899F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Htsoft.Uttt.Edi.WebApi", "Htsoft.Uttt.Edi.WebApi\Htsoft.Uttt.Edi.WebApi.csproj", "{17AC9276-D0AD-400D-8067-D44811C2D452}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{EBBA23C5-2A6A-4EF1-A224-A1A62253899F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBA23C5-2A6A-4EF1-A224-A1A62253899F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBA23C5-2A6A-4EF1-A224-A1A62253899F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17AC9276-D0AD-400D-8067-D44811C2D452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17AC9276-D0AD-400D-8067-D44811C2D452}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17AC9276-D0AD-400D-8067-D44811C2D452}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17AC9276-D0AD-400D-8067-D44811C2D452}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
