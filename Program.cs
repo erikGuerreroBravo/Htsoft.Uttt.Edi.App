@@ -1,5 +1,5 @@
-
-
+using NLog;
+using NLog.Web;
 using NLog;
 
 var logger = LogManager.Setup()
