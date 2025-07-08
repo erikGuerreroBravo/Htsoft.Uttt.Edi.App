@@ -6,7 +6,7 @@ using Htsoft.Uttt.Edi.Aplication.Validators;
 using Htsoft.Uttt.Edi.Infraestructura.Mongo;
 using Htsoft.Uttt.Edi.Infraestructura.Middleware;
 using Htsoft.Uttt.Edi.Aplication.Interfaces;
-using Htsoft.Uttt.Edi.Aplication.Interfaces.Repositories;
+using Htsoft.Uttt.Edi.Infraestructura.Repositories;
 using Microsoft.AspNetCore.Http.Features;
 
 var logger = LogManager.Setup()
