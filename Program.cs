@@ -3,6 +3,7 @@ using NLog.Web;
 using NLog;
 using FluentValidation.AspNetCore;
 using Htsoft.Uttt.Edi.Aplication.Validators;
+using Htsoft.Uttt.Edi.Infraestructure.Mongo;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
@@ -19,6 +20,11 @@ try
      {
          fv.RegisterValidatorsFromAssemblyContaining<EdiModelValidator>();
      });
+
+    builder.Services.Configure<MongoDbSettings>(
+    builder.Configuration.GetSection("MongoDb"));
+
+    builder.Services.AddSingleton<MongoDbContext>();
 
     var app = builder.Build();
     // Configure the HTTP request pipeline.
