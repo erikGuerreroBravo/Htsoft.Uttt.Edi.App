@@ -3,7 +3,8 @@ using NLog.Web;
 using NLog;
 using FluentValidation.AspNetCore;
 using Htsoft.Uttt.Edi.Aplication.Validators;
-using Htsoft.Uttt.Edi.Infraestructure.Mongo;
+using Htsoft.Uttt.Edi.Infraestructura.Mongo;
+
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")

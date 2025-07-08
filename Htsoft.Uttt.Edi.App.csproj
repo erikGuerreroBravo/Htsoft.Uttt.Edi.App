@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Htsoft.Uttt.Edi.Aplication\Htsoft.Uttt.Edi.Aplication.csproj" />
-    <ProjectReference Include="Htsoft.Uttt.Edi.Infraestructure\Htsoft.Uttt.Edi.Infraestructure.csproj" />
+    <ProjectReference Include="..\Htsoft.Uttt.Edi.Infraestructura\Htsoft.Uttt.Edi.Infraestructura.csproj" />
   </ItemGroup>
 
 </Project>
