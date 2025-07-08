@@ -10,6 +10,8 @@ using Htsoft.Uttt.Edi.Infraestructura.Repositories;
 using Microsoft.AspNetCore.Http.Features;
 using Htsoft.Uttt.Edi.Aplication.Interfaces.Loging;
 using Htsoft.Uttt.Edi.Infraestructura.Services.Logging;
+using Htsoft.Uttt.Edi.Aplication.Interfaces.Services;
+using Htsoft.Uttt.Edi.Infraestructura.Services;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
@@ -38,6 +40,7 @@ try
     builder.Services.AddScoped<IEdiRepository, EdiRepository>();
     builder.Services.AddScoped<ExceptionHandlingMiddleware>();
     builder.Services.AddScoped(typeof(ILoggingService<>), typeof(LoggingService<>));
+    builder.Services.AddScoped<IExcelUploadService, ExcelUploadService>();
 
 
     var app = builder.Build();

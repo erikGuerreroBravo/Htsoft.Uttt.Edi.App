@@ -23,7 +23,7 @@ namespace Htsoft.Uttt.Edi.App.Controllers
         [HttpPost("upload")]
         public async Task<IActionResult> Upload(IFormFile file)
         {
-            var data = await _service.ReadExcelAsync(file);
+            var data = await _service.LoadExcelAsync(file);
             await _repository.BulkInsertAsync(data.Select(dto => dto.ToEntity()));
             return Ok(new { message = "Carga exitosa", total = data.Count });
         }
