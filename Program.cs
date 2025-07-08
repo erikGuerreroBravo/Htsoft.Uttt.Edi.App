@@ -28,6 +28,7 @@ try
     builder.Configuration.GetSection("MongoDb"));
     builder.Services.AddSingleton<MongoDbContext>();
     builder.Services.AddScoped<IEdiRepository, EdiRepository>();
+    builder.Services.AddScoped<ExceptionHandlingMiddleware>();
 
     var app = builder.Build();
     // Configure the HTTP request pipeline.
