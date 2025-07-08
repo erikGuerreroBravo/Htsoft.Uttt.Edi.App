@@ -8,6 +8,8 @@ using Htsoft.Uttt.Edi.Infraestructura.Middleware;
 using Htsoft.Uttt.Edi.Aplication.Interfaces;
 using Htsoft.Uttt.Edi.Infraestructura.Repositories;
 using Microsoft.AspNetCore.Http.Features;
+using Htsoft.Uttt.Edi.Aplication.Interfaces.Loging;
+using Htsoft.Uttt.Edi.Infraestructura.Services.Logging;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
@@ -35,6 +37,8 @@ try
     builder.Services.AddSingleton<MongoDbContext>();
     builder.Services.AddScoped<IEdiRepository, EdiRepository>();
     builder.Services.AddScoped<ExceptionHandlingMiddleware>();
+    builder.Services.AddScoped(typeof(ILoggingService<>), typeof(LoggingService<>));
+
 
     var app = builder.Build();
     // Configure the HTTP request pipeline.
