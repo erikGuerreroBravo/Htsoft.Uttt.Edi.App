@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using System.Xml;
 
 
 namespace Htsoft.Uttt.Edi.Infraestructure.Mongo
@@ -15,9 +16,11 @@ namespace Htsoft.Uttt.Edi.Infraestructure.Mongo
     {
         private readonly IMongoDatabase _database;
 
-        public MongoDbContext(IOptions<MongoDbSettings>)
+        public MongoDbContext(IOptions<MongoDbSettings> options)
         {
-            
+            var cliente = new MongoClient(options.Value.ConnectionString);
+            _database = cliente.GetDatabase(options.Value.Database);
         }
+        public IMongoCollection<MyEntity> MyEntities => _database.GetCollection<MyEntity>("MyEntities");
     }
 }
