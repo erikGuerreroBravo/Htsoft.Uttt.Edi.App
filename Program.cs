@@ -1,6 +1,8 @@
 using NLog;
 using NLog.Web;
 using NLog;
+using FluentValidation.AspNetCore;
+using Htsoft.Uttt.Edi.Aplication.Validators;
 
 var logger = LogManager.Setup()
                        .LoadConfigurationFromFile("nlog.config")
@@ -12,6 +14,12 @@ try
     var builder = WebApplication.CreateBuilder(args);
     // Add services to the container.
     builder.Services.AddControllersWithViews();
+    builder.Services.AddControllers()
+     .AddFluentValidation(fv =>
+     {
+         fv.RegisterValidatorsFromAssemblyContaining<EdiModelValidator>();
+     });
+
     var app = builder.Build();
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())
