@@ -20,6 +20,7 @@ try
     logger.Info("Start la aplicacion");
     var builder = WebApplication.CreateBuilder(args);
     // Add services to the container.
+   
     builder.Services.AddControllersWithViews();
     builder.Services.AddControllers()
      .AddFluentValidation(fv =>
@@ -42,6 +43,15 @@ try
 
 
     var app = builder.Build();
+    var context = app.Services.GetRequiredService<MongoDbContext>();
+    if (!context.IsConnectionOk())
+    {
+        logger.Error("No se pudo conectar a MongoDB.");
+    }
+    else
+    {
+        logger.Info("Conexión a MongoDB exitosa.");
+    }
     // Configure the HTTP request pipeline.
     if (!app.Environment.IsDevelopment())
     {
